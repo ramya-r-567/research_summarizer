@@ -1,6 +1,5 @@
 import streamlit as st
 import io
-from pypdf import PdfReader
 import textwrap
 from transformers import pipeline
 from reportlab.pdfgen import canvas
@@ -9,18 +8,23 @@ from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
 from reportlab.lib.styles import getSampleStyleSheet
 import pandas as pd
 
+# ✅ Safe PDF import (works on both VS Code and Streamlit Cloud)
+try:
+    from pypdf import PdfReader   # preferred modern library
+except ImportError:
+    from PyPDF2 import PdfReader  # fallback if pypdf fails
+
 st.set_page_config("Research Summarizer", page_icon="📜", layout="wide")
 
 st.title("Research Paper Summarizer & Classifier")
 st.caption("Paste Text or Upload a PDF. Summarize and Classify with AI.")
 
-def extract_text_from_pdf(file):
+def extract_text_from_pdf(file) -> str:
     reader = PdfReader(file)
     text = ""
     for page in reader.pages:
         text += page.extract_text() or ""
     return text
-
 
 def chunk_text(text, max_words=300):
     """Split text from upload"""
