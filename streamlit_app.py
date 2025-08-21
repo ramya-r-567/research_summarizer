@@ -1,6 +1,6 @@
 import streamlit as st
 import io
-import pypdf2
+import PyPDF2
 import textwrap
 from transformers import pipeline
 from reportlab.pdfgen import canvas
