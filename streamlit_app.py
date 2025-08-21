@@ -8,6 +8,13 @@ from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
 from reportlab.lib.styles import getSampleStyleSheet
 import pandas as pd
 
+def local_css(file_name):
+    with open(file_name) as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
+# load your custom css
+local_css("style.css")
+
 # ✅ Safe PDF import (works on both VS Code and Streamlit Cloud)
 try:
     from pypdf import PdfReader   # preferred modern library
@@ -61,9 +68,16 @@ if len(final_text.split()) > 3000:
     st.warning("⚠️ Input is very long! Summarization may be slow. Try pasting only the abstract or introduction.")
 
 # ---------------------- Buttons ----------------------
-summarize_btn = st.button("Summarize")
-classify_btn = st.button("Classify")
-clear_btn = st.button("Clear")
+col_btn1, col_btn2, col_btn3, col_btn4 = st.columns([1,1,1,1])
+
+with col_btn1:
+    summarize_btn = st.button("📝 Summarize")
+
+with col_btn2:
+    classify_btn = st.button("📊 Classify")
+
+with col_btn3:
+    clear_btn = st.button("🧹 Clear")
 
 
 # ---------------------- Output----------------------
