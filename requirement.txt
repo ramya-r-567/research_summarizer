@@ -1,6 +1,5 @@
 streamlit
+pypdf
+reportlab
 transformers
 torch
-pypdf
-sentencepiece
-reportlab
