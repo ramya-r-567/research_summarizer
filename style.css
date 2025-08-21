@@ -1,0 +1,51 @@
+/* Background with gradient */
+.stApp {
+    background: linear-gradient(135deg, #c9d6ff, #e2e2e2);
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Title */
+h1 {
+    color: #2E86C1;
+    text-align: center;
+    font-size: 3rem !important;
+    font-weight: 800;
+    text-shadow: 2px 2px #f0f0f0;
+}
+
+/* Subtitle / caption */
+h2, h3, h4 {
+    color: #1B4F72;
+    font-weight: 600;
+}
+
+/* Buttons */
+.stButton>button {
+    background: linear-gradient(90deg, #4facfe, #00f2fe);
+    color: white;
+    font-weight: 600;
+    border-radius: 12px;
+    padding: 10px 25px;
+    border: none;
+    box-shadow: 2px 4px 8px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.stButton>button:hover {
+    background: linear-gradient(90deg, #43e97b, #38f9d7);
+    transform: scale(1.05);
+}
+
+/* Text Area */
+textarea {
+    border-radius: 10px !important;
+    border: 2px solid #2E86C1 !important;
+    padding: 10px !important;
+}
+
+/* Success box */
+.stSuccess {
+    background-color: #d4efdf !important;
+    color: #145a32 !important;
+    border-left: 5px solid #28b463 !important;
+}
