@@ -1,6 +1,6 @@
 streamlit
 transformers
 torch
-PyPDF2
+PyPDF2==3.0.1
 sentencepiece
 reportlab
