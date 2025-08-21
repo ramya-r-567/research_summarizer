@@ -76,7 +76,7 @@ if summarize_btn and final_text:
     st.write(summary)
 
 #define categories/labels
-labels = ["Biotechnology", "Artifical Intelligence", "Biology"]
+labels = ["Biotechnology", "Artifical Intelligence", "Biology", "Physics", "Computr Science", "Medicine", "Mathematics", "Engineering"]
 
 if classify_btn and final_text:
     st.write("📊 Classifying text...")
