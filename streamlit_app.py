@@ -14,13 +14,13 @@ st.set_page_config("Research Summarizer", page_icon="📜", layout="wide")
 st.title("Research Paper Summarizer & Classifier")
 st.caption("Paste Text or Upload a PDF. Summarize and Classify with AI.")
 
-def extract_text_from_pdf(file) -> str:
-    """Extract text from upload PDF"""
-    pdf_reader= PyPDF2.PdfReader(file)
+def extract_text_from_pdf(file):
+    reader = PdfReader(file)
     text = ""
-    for page in pdf_reader.pages:
+    for page in reader.pages:
         text += page.extract_text() or ""
     return text
+
 
 def chunk_text(text, max_words=300):
     """Split text from upload"""
