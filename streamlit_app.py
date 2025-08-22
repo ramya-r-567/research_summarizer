@@ -88,6 +88,8 @@ min_len = 30
 summary = ""
 classification_result = None
 
+final_text = user_input.strip() if user_input else ""
+
 if summarize_btn and final_text:
     st.write("🔍 Generating summary...")
     chunks = chunk_text(final_text, max_words=300)
